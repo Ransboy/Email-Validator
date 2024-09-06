@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDC</title>
+</head>
+<style>
+     *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: rgb(248, 241, 171);
+        height: auto;
+        display: flex;
+    }
+    h1{
+        margin-top: 15px;
+        margin-left: 20px;
+        font-family: gold;
+    }
+    p{
+        padding: 3px 0px;
+        margin: 0 20px;
+    }
+
+    #emailField{
+        /* background-color: red; */
+        border-radius: 10px;
+        width:200px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-top: 12px;
+        /* background-color: rgb(248, 241, 171); */
+        border:none;
+    }
+    #emailField:focus{
+        border-color: rgb(248, 241, 171);
+    }
+
+    #submitBtn{
+        font-family: montserrat;
+        font-size: 15px;
+        padding: 8px;
+        border-radius: 10px;
+        background-color: green;
+        color: white;
+        border:none;
+        font-weight: 600;
+    }
+
+    #view{
+        font-family: montserrat;
+        font-size: 15px;
+        padding: 6px;
+        border-radius: 7px;
+        background-color: rgb(175, 155, 5);
+        color: white;
+        border:none;
+        font-weight: 600;
+        margin:4px 0px;
+        margin-left:25px;
+        display: none;
+    }
+
+    #submitBtn:hover{
+        background-color: rgba(0, 128, 0, 0.776);
+    }
+
+    #del{
+        font-family: montserrat;
+        font-size: 15px;
+        padding: 8px;
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+        border:none;
+        font-weight: 700;
+        margin-left: 10px;
+    }
+
+    #del:hover{
+        background-color: rgba(255, 0, 0, 0.736);
+    }
+    #feedback{
+        font-family: montserrat;
+        font-size: 14px;
+        padding-left: 5px;
+        padding-top:10px;
+    }
+
+    #feedback2{
+        font-family: montserrat;
+        font-size: 14px;
+        text-align: left;
+        padding-left: 5px;
+        padding-top:10px;
+    }
+
+    .attribution{
+        position: absolute;
+        bottom: 5px;
+        text-align:center;
+        /* background-color:rgb(248, 241, 171) */
+        /* background-color: red; */
+        width: 100%;
+        font-size: small;
+    }
+
+    @media screen and (max-width:500px) {
+        body{
+            display: flex;
+        }
+        #submitBtn{
+            font-family: montserrat;
+            font-size: 19px;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: green;
+            color: white;
+            border:none;
+            font-weight: 600;
+            margin-top:10px;
+            margin: 8px 5%;
+            width: 90vw;
+        }
+        #view{
+            font-family: montserrat;
+            font-size: 19px;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: rgb(175, 155, 5);
+            color: white;
+            border:none;
+            font-weight: 600;
+            margin: 4px 5%;
+            width: 90vw;
+            /* display: none; */
+        }
+        #dispView{
+            display: block !important;
+        }
+
+        #emailField{
+            /* background-color: red; */
+            border-radius: 10px;
+            width:231px;
+            padding: 10px;
+            margin-left: 20px;
+            margin-top: 12px;
+        }
+
+        .attribution{
+            font-family: montserrat;
+            position: absolute;
+            font-size: small;
+            bottom: 0px;
+            text-align: center;
+            background-color: rgb(248, 241, 171);
+        }
+        #feedback{
+            text-align: center;
+            padding: 2px;
+        }
+        #feedback2{
+            /* font-family: montserrat; */
+            font-size: 14px;
+            text-align: left;
+            padding-left: 5px;
+            padding-top:10px;
+        }
+
+        #del{
+            margin:3px;
+            width:63px;
+        }
+        #del:hover{
+        background-color: rgba(255, 0, 0, 0.736);
+        }
+
+        @media screen and (max-width:375px) {
+        body{
+            display: flex;
+        }
+            
+        #submitBtn{
+            font-family: montserrat;
+            font-size: 19px;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: green;
+            color: white;
+            border:none;
+            font-weight: 600;
+            margin-top:4px;
+            margin: 8px 5%;
+            width: 90vw;
+        }
+        #view{
+            font-family: montserrat;
+            font-size: 19px;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: rgb(175, 155, 5);
+            color: white;
+            border:none;
+            font-weight: 600;
+            margin: 4px 5%;
+            width: 90vw;
+            display: none;
+        }
+        #dispView{
+            display: block !important;
+        }
+
+        #emailField{
+            /* background-color: red; */
+            border-radius: 10px;
+            width:85vw;
+            margin: 6px 4%;
+            padding: 10px;
+            /* margin-left: 15px; */
+            /* margin-top: 12px; */
+        }
+
+        .attribution{
+            font-family: montserrat;
+            position: fixed;
+            font-size: small;
+            bottom: 0px;
+            text-align: center;
+            background-color: white;
+        }
+        #feedback{
+            text-align: center;
+            padding: 2px;
+        }
+        #feedback2{
+            font-family: montserrat;
+            font-size: 14px;
+            text-align: left;
+            padding-left: 5px;
+            padding-top:10px;
+        }
+
+        #del{
+            margin-left:20px;
+            width:63px;
+            font-family: montserrat;
+            font-size: 19px;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            border:none;
+            font-weight: 600;
+            margin-top:0px;
+            margin: 8px 5%;
+            width: 90vw;
+        }
+        #del:hover{
+        background-color: rgba(255, 0, 0, 0.736);
+    }
+    }
+    }
+</style>
+<body>
+    <div class="attribution">
+        <p>Coded by <a href="https://jesuslover599359481.wordpress.com" target="_blank">Ransamie</a></p>
+    </div>
+    <div>
+    <h1>E-MAIL VERIFIER</h1>
+    <p>This input box checks if your email already exists in our database 😁</p>
+    <input type="text" id='emailField' placeholder="Enter your Email" autocomplete="additional-name">
+    <button type="submit" id="del">Clear</button>
+    <button type="submit" id="submitBtn">Submit</button>
+    <p id="feedback"></p>
+    <button type="submit" id="view">View all e-mails</button>
+    <p id="feedback2"></p>
+    </div>
+</body>
+
+    <script>
+        var emails =[
+            'nicholasbrown2020@gmail.com',
+            'ransamie2029@gmail.com',
+            'edetpaulo34@gmail.com',
+            'ransamiedigitalcreations@gmail.com',
+            "john.doe@example.com",
+            "jane.smith@example.com",
+            "michael.brown@example.com",
+            "emily.jones@example.com",
+            "david.johnson@example.com",
+            "sarah.wilson@example.com",
+            "chris.moore@example.com",
+            "kevin.white@example.com",
+            "barbara.harris@example.com",
+            "george.clark@example.com",
+            "nancy.lewis@example.com",
+            "daniel.walker@example.com",
+            "susan.hall@example.com",
+            "andrew.lee@example.com",
+            "karen.young@example.com"
+        ];
+        var sbtn = document.getElementById('submitBtn');
+        var inputCont = document.getElementById('emailField')
+        var delInput = document.getElementById('del')
+        var view = document.getElementById('view')
+
+        sbtn.addEventListener('click',checkEmail)
+        sbtn.addEventListener('click',displayCheck)
+        sbtn.addEventListener('click', validate)
+        inputCont.addEventListener('input',clearDisplay)
+        delInput.addEventListener('click',clear)
+        delInput.addEventListener('click', clearDisplay)
+        delInput.addEventListener('click', clear2)
+        view.addEventListener('click', viewAll)
+        view.addEventListener('click',clear)
+
+        function checkEmail(){
+            var x = document.getElementById('emailField').value;
+            if(emails.indexOf(x)==-1 && x.length!==0){
+                document.getElementById('feedback').innerHTML= "Email verified!"
+                emails.push(x)
+            }
+            else if(x.length == 0){
+                document.getElementById('feedback').innerHTML= "Young man abi woman, please enter an email first!\nYou can also check below if your e-mail is already in our database. "
+            }
+            else{
+                document.getElementById('feedback').innerHTML= "This email has already been used! Try again."
+            }
+        }
+
+        function clearDisplay(){
+            var x = document.getElementById('emailField').value
+            document.getElementById('feedback').innerHTML=""
+        }
+           
+        function clear(){
+            document.getElementById('emailField').value = ""
+            // console.log(y)
+        }
+
+        function clear2(){
+            var x = document.getElementById('view')
+            var y = document.getElementById('feedback2')
+            var x = document.getElementById('view').innerHTML='View all e-mails'
+            y.style.display='none'
+        }
+
+        function viewAll(){
+
+            var store = ""
+            var x = document.getElementById('view')
+            var y = document.getElementById('feedback2')
+            emails.forEach((email,index)=>{
+                store += (index + 1) + '. ' + email + '<br>'
+                y.innerHTML = store;
+            });
+
+            if(y.style.display=='block'){
+                var x = document.getElementById('view').innerHTML='View all e-mails'
+                y.style.display='none'
+            }
+            else{
+                var x = document.getElementById('view').innerHTML='Hide all e-mails'
+                y.style.display='block'
+            }
+        }
+
+        function displayCheck(){
+            view.style.display='block'
+        }
+
+        var email
+        function validate(email) {
+        if(email.indexOf('@',".com") == -1){
+            document.getElementById('feedback').innerHTML= "Please enter a valid e-mail"
+            }
+        
+        else{
+            console.log('This is email is invalid!')
+        }
+    }    
+    
+        
+    </script>
+</html>
